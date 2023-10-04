@@ -1,0 +1,10 @@
+.product-card{
+    border: 1px solid transparent;
+    background: #F4F5F7;
+    border-radius: 8px;
+}
+.product-card img{
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+}
