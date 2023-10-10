@@ -8,11 +8,14 @@ import Gallery from "../pages/Home/Gallery/Gallery";
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Banner/>
-      <Category/>
-      <Product/>
-      <Gallery/>
+      <div>
+        <Navbar />
+      </div>
+      <Banner />
+      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+        <Product />
+        <Gallery />
+      </div>
     </div>
   );
 };

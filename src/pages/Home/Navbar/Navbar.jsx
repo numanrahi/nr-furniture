@@ -1,9 +1,10 @@
 import React from "react";
+import './Navbar.css'
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="w-100 nav-bg" style={{ position: "fixed", }}>
       <div className="d-flex justify-content-between my-3">
         <section className="px-5">Logo</section>
         <section>
@@ -18,7 +19,6 @@ const Navbar = () => {
         </section>
       </div>
     </div>
-   
   );
 };
 
