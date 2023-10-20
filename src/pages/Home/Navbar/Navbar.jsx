@@ -15,7 +15,7 @@ const Navbar = () => {
         </section>
         <section className="d-flex align-items-center px-3 gap-5 ">
           <div>user</div>
-          <div className="btn btn-primary">Login</div>
+          <Link to="/login" className="btn btn-primary">Login</Link>
         </section>
       </div>
     </div>
