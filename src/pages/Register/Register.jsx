@@ -3,6 +3,8 @@ import Navbar from "../Home/Navbar/Navbar";
 import "./Register.css";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser, user } = useContext(AuthContext);
@@ -13,43 +15,38 @@ const Register = () => {
     const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
-    // console.log(name, email, password);
 
-    // createUser(email, password)
     createUser(email, password)
       .then((result) => {
         const createdUser = result.user;
         navigate("/");
         if (createdUser) {
           console.log("Success");
-          //   Swal.fire({
-          //     title: "Success!",
-          //     text: "Registration Successfully",
-          //     icon: "success",
-          //     confirmButtonText: "Cool",
-          //   });
+          Swal.fire({
+            title: "Success!",
+            text: "Registration Successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
         }
       })
       .catch((error) => {
-        // toast.error(error.message);
+        toast.error(error.message);
       });
   };
   return (
     <div>
-      <div>
         <Navbar />
-      </div>
       <div className="container py-4">
-        <div className="row my-5 py-5">
-          <div className="col-lg-3 col-md-2"></div>
-          <div className="col-lg-6 col-md-8 login-box">
-            <div className="col-lg-12 login-key">
+        <div className="w-50 mx-auto parent">
+          <div className="register-box">
+            <div className=" register-key">
               <i className="fa fa-key" aria-hidden="true"></i>
             </div>
-            <div className="col-lg-12 login-title">Register PLease !!</div>
+            <div className=" register-title">Register PLease !!</div>
 
-            <div className="col-lg-12 login-form px-3">
-              <div className="col-lg-12 login-form">
+            <div className=" register-form px-3">
+              <div className=" register-form">
                 <form name="form">
                   <div className="form-group">
                     <label className="form-control-label">Name</label>
@@ -72,22 +69,16 @@ const Register = () => {
                     <Link to="/login">Login</Link>
                   </div>
 
-                  <div className="col-lg-12 loginbttm">
-                    <div className="col-lg-6 login-btm login-text"></div>
-                    <div className="col-lg-6 login-btm login-button">
-                      <button
-                        type="submit"
-                        className="btn btn-outline-primary"
-                        onClick={handleRegister}
-                      >
-                        Register
-                      </button>
-                    </div>
-                  </div>
+                    <button
+                      type="submit"
+                      className="btn btn-outline-primary w-100 my-3" 
+                      onClick={handleRegister}
+                    >
+                      Register
+                    </button>
                 </form>
               </div>
             </div>
-            <div className="col-lg-3 col-md-2"></div>
           </div>
         </div>
       </div>
