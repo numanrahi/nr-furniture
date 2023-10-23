@@ -1,6 +1,7 @@
 import React from "react";
 import "./Login.css";
 import Navbar from "../Home/Navbar/Navbar";
+import { Link } from "react-router-dom";
 const Login = () => {
   return (
     <div>
@@ -27,6 +28,7 @@ const Login = () => {
                     <label class="form-control-label">PASSWORD</label>
                     <input type="password" class="form-control" />
                   </div>
+                  <div className="text-center p-3">If you haven't any Account please <Link to="/register">Register</Link></div>
 
                   <div class="col-lg-12 loginbttm">
                     <div class="col-lg-6 login-btm login-text"></div>
