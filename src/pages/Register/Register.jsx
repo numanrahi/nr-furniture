@@ -38,7 +38,7 @@ const Register = () => {
     <div>
         <Navbar />
       <div className="container py-4">
-        <div className="w-50 mx-auto parent">
+        <div className="w-50 mx-auto register-parent">
           <div className="register-box">
             <div className=" register-key">
               <i className="fa fa-key" aria-hidden="true"></i>
